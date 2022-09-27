@@ -1,7 +1,7 @@
 import types from "../Types";
 
 const initialState = {
-  count: 99,
+  count: 0,
 };
 
 const CounterReducer = (state = initialState, action) => {
