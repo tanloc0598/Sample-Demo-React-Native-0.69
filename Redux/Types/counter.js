@@ -1,0 +1,2 @@
+export const INCREASE = '@COUNTER/INCREASE';
+export const DECREASE = '@COUNTER/DECREASE';
