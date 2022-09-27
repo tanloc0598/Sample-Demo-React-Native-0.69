@@ -1,4 +1,4 @@
-import { Button, Text } from "react-native";
+import { Button, Image, ScrollView, Text } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../Redux/Actions";
@@ -59,6 +59,7 @@ export const Counter = (props) => {
       // Error saving data
     }
   };
+
   const _removeData = async () => {
     try {
       let _provinces = await AsyncStorage.removeItem(
@@ -72,9 +73,18 @@ export const Counter = (props) => {
     }
   };
   return (
-    <>
-      <Text>Counter: {_counter} </Text>
-      <Text>Counter (with Redux) : {counter} </Text>
+    <ScrollView>
+      <Image source={{uri: 'https://reactjs.org/logo-og.png'}}
+             style={{width: 400, height: 400}} />
+
+      <Text style={{
+        padding: 10
+      }}>
+        Counter: {_counter} </Text>
+      <Text style={{
+        padding: 10
+      }}>
+        Counter (with Redux) : {counter} </Text>
       <Button title={"+"}
               onPress={increaseHandler}
       ></Button>
@@ -95,6 +105,6 @@ export const Counter = (props) => {
       <Button title={"Remove storage"}
               onPress={_removeData}
       ></Button>
-    </>
+    </ScrollView>
   );
 };
